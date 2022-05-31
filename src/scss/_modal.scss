@@ -80,4 +80,25 @@
     &.active {
         visibility: visible;
     }
+
+    .loader {
+        display: flex;
+        justify-content: center;
+
+        &::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            border: 10px solid $main-color-light;
+            border-top-color: $main-color-dark;
+            border-radius: 50%;
+            animation: spinning 1s linear infinite;
+        }
+    }
+}
+
+@keyframes spinning {
+    to {
+        transform: rotate(1turn);
+    }
 }

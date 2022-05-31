@@ -18,6 +18,11 @@ openModal.addEventListener('click', () => {
     }
     localStorage.setItem('timesClicked', counter);
     spanTimesClicked.textContent = counter;
+
+    if (modalTable.childNodes.length < 4) {
+        getData();
+    }
+    
 })
 
 closeModal.addEventListener('click', () => {
@@ -40,10 +45,23 @@ resetClicks.addEventListener('click', () => {
 const getData = () => {
     const url = `https://jsonplaceholder.typicode.com/users`;
     
-    fetch(url)
+    let loader = `<div class="loader"></div> `;
+    
+    modalTable.innerHTML = loader;
+        fetch(url)
         .then(response => response.json())
         .then(data => {
             let dataTable = "";
+            dataTable += `
+                <tr>
+                    <th scope="col">Imię i Nazwisko</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Adres</th>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Nazwa firmy</th>
+                </tr>
+            `;
+
             data.forEach(e => {
                 const address = `${e.address.city}${e.address.street}${e.address.suite}`;
                 
@@ -57,9 +75,10 @@ const getData = () => {
                 </tr>
                 `;
             });
-            modalTable.innerHTML += dataTable;
+            modalTable.innerHTML = dataTable;
         })
+    }
 
-}
 
-getData();
+
+
