@@ -1,3 +1,5 @@
+@use 'variables';
+
 @mixin heading {
     font-family: 'Roboto';
     font-style: normal;
@@ -22,6 +24,11 @@
     background-color: $main-color-light;
     padding: 16px 40px;
     border-radius: 32px;
-    border: none;
+    border: 2px solid  $main-color-light;
     cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+        color: $main-color-light;
+    }
 }

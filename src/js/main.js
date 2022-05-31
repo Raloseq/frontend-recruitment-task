@@ -77,7 +77,7 @@ const getData = () => {
             });
             modalTable.innerHTML = dataTable;
         })
-    }
+}
 
 
 
