@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .container {
     background: #E5E5E5;
@@ -32,8 +33,6 @@
             }
         }
         .first-section__content {
-            font-family: 'Roboto';
-            font-style: normal;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -44,16 +43,12 @@
             }
 
             .first-section__heading {
-                font-weight: 700;
-                font-size: 42px;
-                line-height: 50.4px;
+                @include heading;
                 color: $main-color-dark;
             }
 
             .first-section__description {
-                font-weight: 300;
-                font-size: 16px;
-                line-height: 24px;
+                @include description;
                 max-width: 380px;
 
                 @media (max-width: $desktop-medium) {
