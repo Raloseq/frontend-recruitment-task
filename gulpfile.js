@@ -8,7 +8,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var replace = require('gulp-replace');
-
+sass.compiler = require('sass');
 // File paths
 const files = { 
     scssPath: 'src/scss/**/*.scss',
