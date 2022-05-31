@@ -2,6 +2,7 @@
 @import 'variables';
 
 .modal {
+    visibility: hidden;
     .modal__bg {
         position: absolute;
         width: 100%;
@@ -11,6 +12,7 @@
     }
     .modal__close {
         position: absolute;
+        z-index: 999;
         top: 40px;
         right: 40px;
         background-color: transparent;
@@ -33,12 +35,37 @@
         min-height: 200px;
         width: 60%;
         padding-left: 60px;
+
+        @media (max-width: $tablet) {
+            padding-left: 0;
+        }
+
+        @media (max-width: $phone-medium) {
+            width: 90%;
+            align-items: center;
+            padding: 0 20px;
+            text-align: center;
+        }
+
         .modal__heading {
             @include heading;
+
         }
         .modal__description {
             @include description;
         }
+
+        .modal__reset-clicks {
+            visibility: hidden;
+            @include primary-btn;
+
+            &.active-reset-btn {
+                visibility: visible;
+            }
+
+        }
     }
-    
+    &.active {
+        visibility: visible;
+    }
 }

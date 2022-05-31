@@ -13,3 +13,15 @@
     font-size: 16px;
     line-height: 24px;
 }
+
+@mixin primary-btn {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+    background-color: $main-color-light;
+    padding: 16px 40px;
+    border-radius: 32px;
+    border: none;
+    cursor: pointer;
+}
