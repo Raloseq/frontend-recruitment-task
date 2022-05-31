@@ -34,17 +34,17 @@
         gap: 20px;
         min-height: 200px;
         width: 60%;
-        padding-left: 60px;
+        padding: 50px 60px;
 
         @media (max-width: $tablet) {
-            padding-left: 0;
+            width: 80%;
         }
 
         @media (max-width: $phone-medium) {
             width: 90%;
             align-items: center;
             padding: 0 20px;
-            text-align: center;
+            
         }
 
         .modal__heading {
@@ -63,6 +63,18 @@
                 visibility: visible;
             }
 
+        }
+
+        .modal__table {
+            width: 100%; 
+            color: $main-color-dark;
+            display: block;
+            overflow-y: scroll;
+            
+            tr:nth-child(odd) {
+                background-color: $main-color-light;
+            }
+            
         }
     }
     &.active {
